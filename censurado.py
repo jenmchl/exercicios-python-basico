@@ -3,9 +3,13 @@ censurado = ("Baba-ovo", "Babaovo", "Babaca", "Bacura", "Bagos", "Baitola", "Beb
 
 tweet = input("Escreva um Tweet de até 280 caracteres: ")
 
+tweet_censurado = False
 for palavra_censurada in censurado:
-    if (palavra_censurada.lower() in tweet):
-        print('## C E N S U R A D O ##')
+    if palavra_censurada.lower() in tweet:
+        tweet_censurado = True
         break
+
+if tweet_censurado:
+    print('#### CENSURADO ####')
 else:
-        print('##', tweet ,'##')
+    print('####', tweet ,'####')
